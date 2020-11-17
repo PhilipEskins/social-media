@@ -28,6 +28,6 @@ module.exports = gql`
   }
 
   type Mutation {
-    register(registerInpu: RegisterInput): User!
+    register(registerInput: RegisterInput): User!
   }
 `;

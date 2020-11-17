@@ -9,7 +9,7 @@ module.exports = {
     async register(
       _,
       {
-        registerInput : { username, email, password, confirmPassword }
+        registerInput: { username, email, password, confirmPassword }
       },
       context,
       info
@@ -30,7 +30,15 @@ module.exports = {
         id: res.id,
         email: res.email,
         username: res.username
-      }, SECRET_KEY, { expiresIn: '1h' });
+      }, SECRET_KEY, { expiresIn: '1h' }
+    );
+
+    return {
+      ...res._doc,
+      id: res._id,
+      token
+    };
+
     }
   }
 }
